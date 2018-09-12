@@ -27,9 +27,21 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // This code makes the character jump
-        if(Input.GetKeyDown(KeyCode.Space) && grounded){
+        if(Input.GetKeyDown(KeyCode.W) && grounded){
             Jump();
         }
+
+        if (Input.GetKey(KeyCode.D)) {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
+        if (Input.GetKey(KeyCode.A)) {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        }
+            
+                 
 	}
 
     public void Jump(){
