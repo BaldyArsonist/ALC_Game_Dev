@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
     public GameObject currentCheckPoint;
-    private Rigidbody2D player;
+    private Rigidbody2D Player;
 
     public GameObject deathParticle;
     public GameObject respawnParticle;
@@ -17,27 +17,39 @@ public class LevelManager : MonoBehaviour {
     private float gravityStore;
 	// Use this for initialization
 	void Start () {
-        player = FindObjectOfType<Rigidbody2D>();
+
+        Player = FindObjectOfType<Rigidbody2D>();
 	}
 	
     public void RespawnPlayer(){
-        StartCorountine("RespawnPlayerCo");
+        StartCoroutine ("RespawnPCCo");
     }
 
     public IEnumerator RespawnPlayerCo(){
-        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+        Instantiate(deathParticle, Player.transform.position, Player.transform.rotation);
+        //Player.enabled = false;
+        Player.GetComponent<Renderer>().enabled = false;
 
-        player.enabled = false;
-        player.GetComponent<Rigidbody2D>().gravityScale = 0f;
-        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
+        //gravity reset
+        gravityStore = Player.GetComponent<Rigidbody2D>().gravityScale;
+        Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
+        Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        //point penalty
         ScoreManager.addPoints(-pointPenaltyOnDeath);
-
+        //debug message
         Debug.Log("Player Respawn");
-
+        //respawn delay
         yield return new WaitForSeconds(respawnDelay);
+        //gravity restore
+        Player.GetComponent<Rigidbody2D>().gravityScale = gravityStore;
+        //match players transform position
+        Player.transform.position = currentCheckPoint.transform.position;
+        //showPlayer
+        Player.GetComponent<Renderer>().enabled = true;
+        //spawn Player
+        Instantiate(respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
 
-        player.GetComponent<Rigidbody2D>().gravityScale = gravityStore;
+
 
     }
 	// Update is called once per frame
