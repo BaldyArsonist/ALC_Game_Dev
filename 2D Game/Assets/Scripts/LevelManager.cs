@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour {
 	}
 	
     public void RespawnPlayer(){
-        StartCoroutine ("RespawnPCCo");
+        StartCoroutine ("RespawnPlayerCo");
     }
 
     public IEnumerator RespawnPlayerCo(){
