@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
     public GameObject currentCheckPoint;
-    private Rigidbody2D Player;
+    public Rigidbody2D Player;
 
     public GameObject deathParticle;
     public GameObject respawnParticle;
@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        Player = FindObjectOfType<Rigidbody2D>();
+        //Player = FindObjectOfType<Rigidbody2D>();
 	}
 	
     public void RespawnPlayer(){
