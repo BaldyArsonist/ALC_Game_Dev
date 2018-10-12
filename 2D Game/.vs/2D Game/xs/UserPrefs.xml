@@ -10,8 +10,8 @@
       <File FileName="Assets/Scripts/checkPoint.cs" Line="19" Column="2" />
       <File FileName="Assets/Scripts/LevelManager.cs" Line="21" Column="52" />
       <File FileName="Assets/Scripts/KillPlayer.cs" Line="21" Column="1" />
-      <File FileName="Assets/Scripts/PlayerShoot.cs" Line="18" Column="77" />
-      <File FileName="Assets/Scripts/projectile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerShoot.cs" Line="17" Column="43" />
+      <File FileName="Assets/Scripts/projectile.cs" Line="26" Column="64" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
