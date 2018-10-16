@@ -13,18 +13,14 @@ public class projectile : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //Player = FindObjectOfType<Rigidbody2D>();
+        if (Player.transform.localScale.x < 0)
+            Speed = -Speed;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Player.transform.localScale.x < 0)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-Speed, GetComponent<Rigidbody2D>().velocity.y);
-        }
-        else{
-            GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);
-        }
+        GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
