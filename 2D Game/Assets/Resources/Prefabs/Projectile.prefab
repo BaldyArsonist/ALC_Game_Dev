@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50209895064639178}
   - component: {fileID: 114711340237737148}
   m_Layer: 0
-  m_Name: projectile
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 20
+  TimeOut: 0
   Player: {fileID: 0}
   EnemyDeath: {fileID: 0}
   ProjectileParticle: {fileID: 0}

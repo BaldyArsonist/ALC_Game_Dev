@@ -348,6 +348,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 184666850}
+  - component: {fileID: 184666851}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -368,6 +369,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184666851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184666849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222653e950afe485ca903c04cc9da7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckPoint: {fileID: 925464845}
+  Player: {fileID: 1499230441}
+  Player2: {fileID: 0}
+  deathParticle: {fileID: 94370027}
+  respawnParticle: {fileID: 1171146524}
+  respawnDelay: 0.5
+  pointPenaltyOnDeath: 10
 --- !u!1 &193478380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8ee0a97cdf946e3b07472602f53d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelManager: {fileID: 1499230446}
+  LevelManager: {fileID: 0}
 --- !u!114 &756373780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,7 +2125,7 @@ Prefab:
         type: 2}
       propertyPath: LevelManager
       value: 
-      objectReference: {fileID: 1499230446}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09093256bda0b492c94210871d21b98c, type: 2}
   m_IsPrefabParent: 0
@@ -3160,7 +3179,6 @@ GameObject:
   - component: {fileID: 1499230445}
   - component: {fileID: 1499230444}
   - component: {fileID: 1499230446}
-  - component: {fileID: 1499230447}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3292,23 +3310,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
 --- !u!114 &1499230446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1499230440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 222653e950afe485ca903c04cc9da7b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentCheckPoint: {fileID: 925464845}
-  Player: {fileID: 1499230441}
-  deathParticle: {fileID: 94370027}
-  respawnParticle: {fileID: 1171146524}
-  respawnDelay: 0.5
-  pointPenaltyOnDeath: 10
---- !u!114 &1499230447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -4426,11 +4427,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4167747989458208, guid: f739ff58bd1ff460491572eb46ce5c88, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.87
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4167747989458208, guid: f739ff58bd1ff460491572eb46ce5c88, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12.75
+      value: -9.12
       objectReference: {fileID: 0}
     - target: {fileID: 4167747989458208, guid: f739ff58bd1ff460491572eb46ce5c88, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4460,7 +4461,7 @@ Prefab:
         type: 2}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1499230441}
+      objectReference: {fileID: 1499230440}
     - target: {fileID: 114711340237737148, guid: f739ff58bd1ff460491572eb46ce5c88,
         type: 2}
       propertyPath: EnemyDeath
@@ -4471,6 +4472,11 @@ Prefab:
       propertyPath: ProjectileParticle
       value: 
       objectReference: {fileID: 331446483}
+    - target: {fileID: 114711340237737148, guid: f739ff58bd1ff460491572eb46ce5c88,
+        type: 2}
+      propertyPath: TimeOut
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f739ff58bd1ff460491572eb46ce5c88, type: 2}
   m_IsPrefabParent: 0
