@@ -377,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCheckPoint: {fileID: 925464845}
   Player: {fileID: 1499230441}
-  Player2: {fileID: 0}
+  Player2: {fileID: 1499230440}
   deathParticle: {fileID: 94370027}
   respawnParticle: {fileID: 1171146524}
   respawnDelay: 0.5

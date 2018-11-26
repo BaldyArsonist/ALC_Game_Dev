@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
         Player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         Player2 = GameObject.Find("Player");
+        respawnParticle = Resources.Load("Prefabs/RespawnP") as GameObject;
+        deathParticle = Resources.Load("Prefabs/DeathP") as GameObject;
 	}
 	
     public void RespawnPlayer(){
@@ -30,7 +32,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(deathParticle, Player.transform.position, Player.transform.rotation);
         //Player.enabled = false;
         Player2.SetActive(false);
-        Player.GetComponent<Renderer>().enabled = false;
+        Player2.GetComponent<Renderer>().enabled = false;
 
         //gravity reset
         gravityStore = Player.GetComponent<Rigidbody2D>().gravityScale;
@@ -48,7 +50,7 @@ public class LevelManager : MonoBehaviour {
         Player.transform.position = currentCheckPoint.transform.position;
         //showPlayer
         Player2.SetActive(true);
-        Player.GetComponent<Renderer>().enabled = true;
+        Player2.GetComponent<Renderer>().enabled = true;
         //spawn Player
         Instantiate(respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
 
